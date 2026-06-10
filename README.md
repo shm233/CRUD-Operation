@@ -15,6 +15,7 @@
 ---
 
 <div align="center">
+  
 # What is this project?
 
 <p> This project is a simple demonstration of how CRUD operation works in Django, in here, pillow has been used to process images and django-cleanup has been used to keep the storage clean from old and redundant files.
