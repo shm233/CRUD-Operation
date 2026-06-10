@@ -15,9 +15,9 @@
 ---
 #What is this project?
 <div class="mb-3"
-This project is a simple demonstration of how CRUD operation works in Django, in here, pillow has been used to process images and django-cleanup has been used to keep the storage clean from old and redundant files.
-Create your virtual environment file, then follow the installation steps to access the project. Deploy a local server to see how the project works. This project is mainly for those who wants to learn how django CRUD operation works and how can we create a simple web page that takes data, updates it, displays data and remove data.
-
+<p> This project is a simple demonstration of how CRUD operation works in Django, in here, pillow has been used to process images and django-cleanup has been used to keep the storage clean from old and redundant files.
+Create your virtual environment file, then follow the installation steps to access the project. Deploy a local server to see how the project works. This project is mainly for those who wants to learn how django CRUD operation works and how can we create a simple web page that takes data, updates it, displays data and remove data.</p>
+  </div>
 ## 📋 Table of Contents
 
 - [⚙️ Prerequisites](#prerequisites)
