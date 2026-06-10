@@ -1,0 +1,32 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <h1>Add new Courses</h1>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Course Title</label>
+      <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Course Title" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Mark Provided</label>
+      <input type="number" name="mark" class="form-control" id="exampleFormControlInput1" placeholder="Total Mark" />
+    </div>
+    <div class="mb-3">
+      <select name="department" class="form-select" aria-label="Default select example">
+        <option selected>Open this menu</option>
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Course Image</label>
+      <input type="file" name="course_image" class="form-control" id="exampleFormControlInput1" placeholder="Provide Image File" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Course Start Date</label>
+      <input type="date" name="start_date" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add New Course</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <h1>These are Current Course</h1>
+  <h2><a href="{% url 'course_add' %}" class="btn btn-success">Add New Courses</a></h2>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Sl No.</th>
+        <th>Title</th>
+        <th>Mark</th>
+        <th>Department</th>
+        <th>Course Image</th>
+        <th>Starting Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in course %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ c.title }}</td>
+          <td>{{ c.mark }}</td>
+          <td>{{ c.department }}</td>
+          <td>
+            {% if c.course_image %}
+              <img src="/{{ c.course_image }}" alt="" height="80px" width="80px"/>
+            {% else %}
+              <p>Image Loading</p>
+            {% endif %}
+          </td>
+          <td>{{ c.start_date|date:'Y-m-d' }}</td>
+          <td>
+            <a href="{% url 'course_edit' c.id %}" class="btn btn-warning">Edit Course</a>
+            <a href="{% url 'course_delete' c.id %}" class="btn btn-danger">Delete Course</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

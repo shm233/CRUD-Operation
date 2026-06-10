@@ -1,0 +1,41 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <h1>Edit Courses for {{course.title}}</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Course Title</label>
+    <input type="text" name="title" value="{{course.title}}" class="form-control" id="exampleFormControlInput1" placeholder="Course Title" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Mark Provided</label>
+    <input type="number" name="mark" value="{{course.mark}}" class="form-control" id="exampleFormControlInput1" placeholder="Total Mark" />
+  </div>
+  <div class="mb-3">
+    <select name="department" class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option value="CSE" 
+      {% if course.department == 'CSE' %}
+        selected
+      {% endif %}
+        >One</option>
+      <option value="EEE" 
+      {% if course.department == 'EEE' %}
+        selected
+      {% endif %}
+        >Two</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Course Image</label>
+    <input type="file" name="course_image" value="{{course.course_image}}" class="form-control" id="exampleFormControlInput1" placeholder="Provide Image File" />
+    <img src="/{{course.course_image}}" alt="" width="50px" height="50px">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Course Start Date</label>
+    <input type="date" name="start_date" value="{{course.start_date|date:'Y-m-d'}}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+  </div>
+  <button type="submit" class="btn btn-success">Update Information</button>
+  </form>
+{% endblock %}
